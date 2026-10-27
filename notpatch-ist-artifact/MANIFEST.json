@@ -1,6 +1,6 @@
 {
  "schema_version": "notpatch-ist-artifact-manifest-v1",
- "source_commit": "1958970eeb4c",
+ "source_commit": "ee09b13f3998",
  "build_date": "2026-10-27",
  "commands": [
   {

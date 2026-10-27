@@ -4,11 +4,13 @@ This package accompanies the article *NotPatch: When "Resolved" Does Not Establi
 It contains the annotation records, manifests, and deterministic scripts behind every generated table in the article and its supplement.
 A single command regenerates these outputs and checks them byte for byte against the archived checksums.
 
-Built from research-repository commit `1958970eeb4c` on 2026-10-27.
+Public repository: https://github.com/mrhjs225/not_patch_artifact (this directory is `notpatch-ist-artifact/` there).
+Built from research-repository commit `ee09b13f3998` on 2026-10-27.
 
 ## Quick start
 
 Requirements: Python 3.12 or newer. Only the standard library is used, so no installation is needed.
+Run the commands from this directory.
 Python 3.11 also runs every step, but two weighted-kappa values then differ in the last floating-point digit because Python 3.12 changed float summation, so the byte comparison reports them.
 
 ```bash
@@ -16,7 +18,7 @@ python3 reproduce.py --check-only   # verify every shipped file against MANIFEST
 python3 reproduce.py                # unpack inputs, run all analysis steps, verify outputs
 ```
 
-`reproduce.py` first restores the `.xz`-compressed inputs to the paths the scripts expect.
+`reproduce.py` first restores the `.xz`-compressed inputs and the release assets to the paths the scripts expect.
 It then runs the steps below in order and compares all 54 outputs with `MANIFEST.json`.
 A step whose release asset is absent is skipped and reported; its shipped outputs are still checked.
 
@@ -44,8 +46,9 @@ Most scripts refuse to run if a frozen input no longer matches its recorded SHA-
 
 ## Release assets
 
-Two large files are attached to the GitHub release instead of the repository.
-Place each one at the listed path, or run without it.
+Two large files are kept outside this directory, in `release-assets/` at the top of the GitHub repository, with their checksums in `release-assets/SHA256SUMS`.
+When that folder sits next to this directory, as in a clone of the repository, `reproduce.py` restores each file to the listed path and checks its SHA-256.
+Otherwise place each file at the listed path yourself, or run without it.
 
 | Asset | Place at | Size | Purpose |
 | --- | --- | --- | --- |

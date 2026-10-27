@@ -42,6 +42,21 @@ def unpack() -> None:
             sys.exit(f"checksum mismatch after unpacking {item['path']}")
 
 
+def restore_assets() -> None:
+    # Release assets sit in ../release-assets in the GitHub repository; restore any that are absent.
+    shelf = ROOT.parent / "release-assets"
+    for item in MANIFEST["release_assets"]:
+        target, source = ROOT / item["place_at"], shelf / item["asset"]
+        if target.exists() or not source.exists():
+            continue
+        target.parent.mkdir(parents=True, exist_ok=True)
+        opener = lzma.open if item["asset"].endswith(".xz") else open
+        with opener(source, "rb") as src, target.open("wb") as dst:
+            shutil.copyfileobj(src, dst, 1 << 20)
+        if sha256(target) != item["sha256"]:
+            sys.exit(f"checksum mismatch after restoring {item['asset']}")
+
+
 def check(paths: dict[str, str]) -> list[str]:
     return [p for p, h in paths.items() if not (ROOT / p).exists() or sha256(ROOT / p) != h]
 
@@ -59,6 +74,7 @@ def main() -> int:
         print("Shipped files that differ from MANIFEST.json:", *bad, sep="\n  ")
         return 1
     unpack()
+    restore_assets()
     if args.check_only:
         print(f"OK: {len(MANIFEST['files'])} shipped files and {len(MANIFEST['compressed'])} unpacked inputs match")
         return 0
