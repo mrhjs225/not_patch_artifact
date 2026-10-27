@@ -1,0 +1,6 @@
+__pycache__/
+data/annotations/worklists/repo480_construct_validity_tasks_v1.jsonl
+data/annotations/worklists/repo480_rq2_phase1_tasks_v1.jsonl
+external/notpatch_evidence/swebench-live-lite-ext120-v1/clean/reviewer_views.jsonl
+external/notpatch_evidence/swebench-repo480-expanded-v1/repo480_unbudgeted_sources_v1.zip
+external/notpatch_evidence/swebench-repo480-v1/clean/reviewer_views.jsonl

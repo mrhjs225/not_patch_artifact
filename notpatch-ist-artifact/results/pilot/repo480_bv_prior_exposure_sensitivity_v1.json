@@ -1,0 +1,166 @@
+{
+  "agreement_with_frozen": {
+    "exposed": {
+      "agreement_count": 58,
+      "cells": {
+        "P0/P1|P0/P1": 37,
+        "P0/P1|P2/P3": 5,
+        "P2/P3|P0/P1": 7,
+        "P2/P3|P2/P3": 21
+      },
+      "cohen_kappa": 0.638554,
+      "n": 70,
+      "observed_agreement": 0.828571,
+      "pabak": 0.657143
+    },
+    "unexposed": {
+      "agreement_count": 140,
+      "cells": {
+        "P0/P1|P0/P1": 140,
+        "P0/P1|P2/P3": 0,
+        "P2/P3|P0/P1": 10,
+        "P2/P3|P2/P3": 0
+      },
+      "cohen_kappa": 0.0,
+      "n": 150,
+      "observed_agreement": 0.933333,
+      "pabak": 0.866667
+    }
+  },
+  "analyzed_on": "2026-10-27",
+  "claim_boundary": [
+    "Exposure is inferred from staffing and row membership; no RR-A raw row recorded a protocol_deviation, so row-level recall is unknown.",
+    "The reverted estimate assigns every exposed row its frozen label: it removes any exposure-driven disagreement but also any genuine one, so it is a sensitivity, not a corrected estimate.",
+    "The exposure split is not randomized; exposed rows include every frozen P2/P3 row, so agreement differences mix exposure with row difficulty.",
+    "Frozen labels, 26/480 and the primary 0.094 estimate are unchanged."
+  ],
+  "exposed_rows": {
+    "by_frozen_binary": {
+      "P0/P1": 44,
+      "P2/P3": 26
+    },
+    "by_stratum": {
+      "raw_consensus_p01": 34,
+      "raw_union_p23": 36
+    },
+    "count": 70,
+    "denominator": 220
+  },
+  "exposed_rows_reverted_to_frozen": {
+    "covers_frozen_26_of_480": false,
+    "denominator": 480,
+    "effective_numerator": 41.2,
+    "interval_95": {
+      "lower": 0.077767,
+      "upper": 0.114376
+    },
+    "proportion": 0.085833,
+    "strata": {
+      "raw_consensus_p01": {
+        "finite_population_fraction": 0.365854,
+        "population": 410,
+        "positive": 3,
+        "sample": 150,
+        "sample_proportion": 0.02
+      },
+      "raw_union_p23": {
+        "census": true,
+        "population": 70,
+        "positive": 33,
+        "sample": 70
+      }
+    }
+  },
+  "exposed_validation_boundary_by_audit_result": {
+    "frozen_p01|direction_match": {
+      "n": 27,
+      "validation_p2p3": 2
+    },
+    "frozen_p01|direction_mismatch": {
+      "n": 8,
+      "validation_p2p3": 3
+    },
+    "frozen_p01|direction_partial_match": {
+      "n": 9,
+      "validation_p2p3": 2
+    },
+    "frozen_p23|oracle_in_candidates_no": {
+      "n": 7,
+      "validation_p2p3": 6
+    },
+    "frozen_p23|oracle_in_candidates_yes": {
+      "n": 19,
+      "validation_p2p3": 15
+    }
+  },
+  "inputs": {
+    "construct_rows": {
+      "ref": "results/pilot/repo480_construct_validity_rows_v1.jsonl",
+      "sha256": "5cac9074c6dd4945403ff2a93751bea071691c8c61af0acc18366d9a7d8d24d9"
+    },
+    "discordance_rows": {
+      "ref": "results/pilot/repo480_boundary_discordance_typology_rows_v1.jsonl",
+      "sha256": "4769b2809884ab8cb42cc1ad8aafa3bcaf371ba1d2dc1e71c591619fab14c6c4"
+    },
+    "validation_analysis": {
+      "ref": "results/pilot/repo480_boundary_validation_analysis_v1.json",
+      "sha256": "9879635db928cd92637d36fafc72ed2cb8972267ff89a06d37025d31228fe605"
+    },
+    "validation_raw_r1": {
+      "ref": "data/annotations/oracle_gap/repo480_boundary_validation_panel/repo480_boundary_validation_r1.jsonl",
+      "sha256": "869f36fa5bad08fa79e800197b80514f74f9876d4da8fa3e1635b4eab5d3246a"
+    },
+    "validation_raw_r2": {
+      "ref": "data/annotations/oracle_gap/repo480_boundary_validation_panel/repo480_boundary_validation_r2.jsonl",
+      "sha256": "9845d3e00e51c325bff2fdaa4ac4411d335a1539f39af2c543d49caf68c19871"
+    },
+    "validation_rows": {
+      "ref": "results/pilot/repo480_boundary_validation_analysis_rows_v1.jsonl",
+      "sha256": "4163d2eaa3f2c158ed4961c5c3ea207266e6b5128614d8f0578c48cb198cf44b"
+    }
+  },
+  "primary_estimate": {
+    "denominator": 480,
+    "effective_numerator": 44.933333,
+    "interval_95": {
+      "lower": 0.083537,
+      "upper": 0.123877
+    },
+    "proportion": 0.093611,
+    "strata": {
+      "raw_consensus_p01": {
+        "finite_population_fraction": 0.365854,
+        "population": 410,
+        "positive": 4,
+        "sample": 150,
+        "sample_proportion": 0.026667
+      },
+      "raw_union_p23": {
+        "census": true,
+        "population": 70,
+        "positive": 34,
+        "sample": 70
+      }
+    }
+  },
+  "raw_rows_with_protocol_deviation": 0,
+  "rre_set_b_exposed": {
+    "count": 12,
+    "denominator": 22
+  },
+  "schema_version": "repo480-bv-prior-exposure-v1",
+  "staffing": {
+    "construct_raw_roles": [
+      "repo480_cv_r1",
+      "repo480_cv_r2",
+      "repo480_cv_r3"
+    ],
+    "relation": "same three experts; construct-validity raw returns preceded the RR-A package (2026-08-18)",
+    "source": "owner staffing report 2026-10-27 recorded in docs/annotator_registry.md",
+    "validation_roles": [
+      "repo480_bv_r1",
+      "repo480_bv_r2",
+      "repo480_bv_adj"
+    ]
+  }
+}

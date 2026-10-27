@@ -1,0 +1,291 @@
+{
+  "schema_version": "repo480-p1-boundary-typology-analysis-v1",
+  "status": "agent-coded-pending-expert-verification",
+  "coder_id": "repo480_rre_c1",
+  "coder_disclosure": "Single analytic coding pass by an AI agent (Claude Opus 5.5) over existing returned records; not an expert annotation and not counted as one.",
+  "set_b_codes_commit_before_set_a_oracle": "30702cc",
+  "codebook": {
+    "ref": "docs/repo480_p1_boundary_typology_codebook.md",
+    "sha256": "ca09032c5b7dee4915276b1bbab866e119d4627cfa2c3d1df13495532ea1f06b"
+  },
+  "inputs": {
+    "data/annotations/worklists/repo480_p1_typology_worklist_v1.jsonl": "c34ee40281332780cd48fb0415a45e0c921c89d984bd3db132718ccdd32937e6",
+    "data/manifests/generated/repo480_p1_typology_worklist_manifest_v1.json": "c08358e9047169cbfc6d868bf54f1df76796c689ee83d24ecaf01d3830b54198",
+    "data/annotations/typology/repo480_p1_typology_codes_c1_v1.jsonl": "2b772a9cf207a51e7c1662c77aac94cf96731f44b4b79be83fa47089edc94aa0",
+    "results/pilot/repo480_construct_validity_rows_v1.jsonl": "5cac9074c6dd4945403ff2a93751bea071691c8c61af0acc18366d9a7d8d24d9",
+    "data/annotations/adjudicated/repo480_available_v1.jsonl": "98b33aabbd10b34bd093c4590c2f6c42476f999dd0e60e64794dbb0544f4e63d",
+    "results/pilot/repo480_boundary_validation_analysis_v1.json": "9879635db928cd92637d36fafc72ed2cb8972267ff89a06d37025d31228fe605"
+  },
+  "set_a": {
+    "n": 23,
+    "verdict_split": {
+      "mismatch": 9,
+      "partial_match": 14
+    },
+    "type_counts": {
+      "a_same_contract": {
+        "partial_match": 1,
+        "mismatch": 0,
+        "count": 1,
+        "total": 1,
+        "denominator": 23,
+        "proportion": 0.043478,
+        "wilson_95_ci": {
+          "lower": 0.007717,
+          "upper": 0.209912
+        }
+      },
+      "b_contract_choice": {
+        "partial_match": 8,
+        "mismatch": 8,
+        "count": 16,
+        "total": 16,
+        "denominator": 23,
+        "proportion": 0.695652,
+        "wilson_95_ci": {
+          "lower": 0.491342,
+          "upper": 0.84396
+        }
+      },
+      "c_evidence_reading": {
+        "partial_match": 0,
+        "mismatch": 0,
+        "count": 0,
+        "total": 0,
+        "denominator": 23,
+        "proportion": 0.0,
+        "wilson_95_ci": {
+          "lower": 0.0,
+          "upper": 0.143117
+        }
+      },
+      "d_oracle_scope": {
+        "partial_match": 5,
+        "mismatch": 1,
+        "count": 6,
+        "total": 6,
+        "denominator": 23,
+        "proportion": 0.26087,
+        "wilson_95_ci": {
+          "lower": 0.125486,
+          "upper": 0.4647
+        }
+      },
+      "u_undeterminable": {
+        "partial_match": 0,
+        "mismatch": 0,
+        "count": 0,
+        "total": 0,
+        "denominator": 23,
+        "proportion": 0.0,
+        "wilson_95_ci": {
+          "lower": 0.0,
+          "upper": 0.143117
+        }
+      },
+      "b_anticipated": {
+        "partial_match": 5,
+        "mismatch": 5,
+        "count": 10,
+        "total": 10,
+        "denominator": 23,
+        "proportion": 0.434783,
+        "wilson_95_ci": {
+          "lower": 0.256346,
+          "upper": 0.631886
+        }
+      },
+      "b_unanticipated": {
+        "partial_match": 3,
+        "mismatch": 3,
+        "count": 6,
+        "total": 6,
+        "denominator": 23,
+        "proportion": 0.26087,
+        "wilson_95_ci": {
+          "lower": 0.125486,
+          "upper": 0.4647
+        }
+      }
+    },
+    "secondary_any_mention": {
+      "a_same_contract": 1,
+      "d_oracle_scope": 3
+    },
+    "field_counts": {
+      "divergence_kind": {
+        "added_behavior": 5,
+        "different_behavior": 18
+      },
+      "predicted_supported": {
+        "yes": 23
+      },
+      "oracle_basis": {
+        "admissible_not_selected": 17,
+        "outside_issue_scope": 6
+      }
+    },
+    "panel_crosstab": {
+      "a_same_contract": {
+        "panel_p01": 0,
+        "panel_p23": 0,
+        "not_in_panel": 1
+      },
+      "b_anticipated": {
+        "panel_p01": 5,
+        "panel_p23": 1,
+        "not_in_panel": 4
+      },
+      "b_unanticipated": {
+        "panel_p01": 3,
+        "panel_p23": 2,
+        "not_in_panel": 1
+      },
+      "c_evidence_reading": {
+        "panel_p01": 0,
+        "panel_p23": 0,
+        "not_in_panel": 0
+      },
+      "d_oracle_scope": {
+        "panel_p01": 2,
+        "panel_p23": 2,
+        "not_in_panel": 2
+      },
+      "u_undeterminable": {
+        "panel_p01": 0,
+        "panel_p23": 0,
+        "not_in_panel": 0
+      }
+    },
+    "displacement_what_if": {
+      "prefix_p1_rows": 47,
+      "frame_p1_rows": 185,
+      "frame_p23_rows": 26,
+      "frame_rows": 480,
+      "reference_frozen_rule": 0.054167,
+      "reference_independent_panel": 0.093611,
+      "scenarios": [
+        {
+          "scenario": "b_unanticipated",
+          "count_in_prefix_p1": 6,
+          "count": 6,
+          "total": 6,
+          "denominator": 47,
+          "proportion": 0.12766,
+          "wilson_95_ci": {
+            "lower": 0.059846,
+            "upper": 0.251739
+          },
+          "implied_frame_p1_rows": 23.617021,
+          "what_if_p23_proportion": 0.103369
+        },
+        {
+          "scenario": "b_all",
+          "count_in_prefix_p1": 16,
+          "count": 16,
+          "total": 16,
+          "denominator": 47,
+          "proportion": 0.340426,
+          "wilson_95_ci": {
+            "lower": 0.221674,
+            "upper": 0.483291
+          },
+          "implied_frame_p1_rows": 62.978723,
+          "what_if_p23_proportion": 0.185372
+        }
+      ],
+      "note": "Moves k/47 of the frame's P1 rows to P2/P3. Strict-match rows may also hide contract choices and P0 non-strict rows are not coded, so this is neither a bound nor a corrected estimate."
+    }
+  },
+  "set_b": {
+    "n": 22,
+    "direction_counts": {
+      "frozen_p01_to_panel_p23": 17,
+      "frozen_p23_to_panel_p01": 5
+    },
+    "label_pairs": {
+      "P0->P2": 1,
+      "P1->P2": 16,
+      "P2->P1": 4,
+      "P3->P0": 1
+    },
+    "p1_p2_boundary_rows": 20,
+    "source_counts": {
+      "evidence_utilization": {
+        "frozen_p01_to_panel_p23": 3,
+        "frozen_p23_to_panel_p01": 1,
+        "p1_p2_boundary": 3,
+        "total": 4
+      },
+      "rule_threshold": {
+        "frozen_p01_to_panel_p23": 10,
+        "frozen_p23_to_panel_p01": 2,
+        "p1_p2_boundary": 11,
+        "total": 12
+      },
+      "case_judgment": {
+        "frozen_p01_to_panel_p23": 4,
+        "frozen_p23_to_panel_p01": 2,
+        "p1_p2_boundary": 6,
+        "total": 6
+      },
+      "undeterminable": {
+        "frozen_p01_to_panel_p23": 0,
+        "frozen_p23_to_panel_p01": 0,
+        "p1_p2_boundary": 0,
+        "total": 0
+      }
+    },
+    "alternative_relation": {
+      "distinct_contract": 19,
+      "no_executable_candidate": 1,
+      "same_contract_variant": 2
+    },
+    "p01_side_treatment": {
+      "excluded_by_cited_evidence": 8,
+      "named_as_bounded_assumption": 12,
+      "not_addressed": 2
+    },
+    "evidence_omitting_outcome": {
+      "frozen": 2,
+      "panel": 2
+    },
+    "repository_evidence_use": {
+      "frozen_final": 22,
+      "panel_final": 18
+    }
+  },
+  "shared_tasks": [
+    {
+      "task_id": "django__django-14399",
+      "set_a_type": "d_oracle_scope",
+      "set_b_source": "rule_threshold"
+    },
+    {
+      "task_id": "matplotlib__matplotlib-23563",
+      "set_a_type": "b_anticipated",
+      "set_b_source": "rule_threshold"
+    },
+    {
+      "task_id": "psf__requests-2466",
+      "set_a_type": "b_unanticipated",
+      "set_b_source": "rule_threshold"
+    },
+    {
+      "task_id": "sphinx-doc__sphinx-10207",
+      "set_a_type": "d_oracle_scope",
+      "set_b_source": "case_judgment"
+    },
+    {
+      "task_id": "sphinx-doc__sphinx-9053",
+      "set_a_type": "b_unanticipated",
+      "set_b_source": "case_judgment"
+    }
+  ],
+  "claim_boundary": [
+    "Frozen repo480_available_v1 labels, 26/480, 0.094 and 76/112 are unchanged.",
+    "Type counts describe 23 and 22 audited rows; they are not population rates.",
+    "The displacement what-if is not a corrected, upper or lower prevalence estimate.",
+    "Coding was performed by an AI agent and awaits independent expert verification."
+  ]
+}

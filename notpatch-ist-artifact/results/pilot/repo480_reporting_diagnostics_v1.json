@@ -1,0 +1,167 @@
+{
+  "analysis_id": "repo480-reporting-diagnostics-v1",
+  "boundary_disagreement_adjudication": {
+    "disagreement_count": 50,
+    "final_p01": 44,
+    "final_p23": 6,
+    "final_total_p23": 26,
+    "raw_consensus_p23": 20
+  },
+  "claim_scope": [
+    "Reliability coefficients describe the two original raw passes before adjudication.",
+    "Verified membership and retrieval strata are construct/sensitivity diagnostics, not new prevalence estimands.",
+    "The 120 unused eligible draw rows are reserve rows, not exclusions or attrition."
+  ],
+  "data_quality_counts": {
+    "Q0": 477,
+    "Q2": 3
+  },
+  "inputs": {
+    "adjudicated": {
+      "ref": "data/annotations/adjudicated/repo480_available_v1.jsonl",
+      "sha256": "98b33aabbd10b34bd093c4590c2f6c42476f999dd0e60e64794dbb0544f4e63d"
+    },
+    "prevalence_analysis": {
+      "ref": "results/pilot/repo480_available_v1_prevalence_analysis.json",
+      "sha256": "30d7190f1c2d66b70fc75d4f650f9ef8556f96227e7557ff7b961794de1a024a"
+    },
+    "raw_r1": {
+      "ref": "data/annotations/raw_labels/repo480_available_v1_r1.jsonl",
+      "sha256": "5318d907093d44ee6eeeb7938c68373a8430bbb7a9e6e488a68a6685592e5a34"
+    },
+    "raw_r2": {
+      "ref": "data/annotations/raw_labels/repo480_available_v1_r2.jsonl",
+      "sha256": "cfd7daaf1f1256d6827e60eba78837cf21ff8d51e52aacb2b1e82ec319aca390"
+    },
+    "split": {
+      "ref": "data/processed/dataset_splits/swebench_full_prevalence_random_480.json",
+      "sha256": "02f47b8096979cbd6cb502eb6416ca25785d1400ecc906acce8fb29062c0d284"
+    },
+    "verified_membership": {
+      "ref": "data/manifests/generated/swebench_verified_test_membership.json",
+      "sha256": "49c8bda345654d9c33c1bb03695ab7bbc59407c94dca9156bf42e31b0e1cd37a"
+    }
+  },
+  "raw_reliability": {
+    "binary_boundary": {
+      "agreement_count": 430,
+      "cohen_kappa": 0.40310385992837255,
+      "gwet_ac1": 0.8745098039215686,
+      "matrix": {
+        "P0/P1": {
+          "P0/P1": 410,
+          "P2/P3": 48
+        },
+        "P2/P3": {
+          "P0/P1": 2,
+          "P2/P3": 20
+        }
+      },
+      "n": 480,
+      "observed_agreement": 0.8958333333333334,
+      "pabak": 0.7916666666666667
+    },
+    "primary_blocker_any_recorded": {
+      "agreement_count": 124,
+      "denominator": 277,
+      "observed_agreement": 0.44765342960288806
+    },
+    "primary_label": {
+      "agreement_count": 342,
+      "cohen_kappa": 0.5058412783671278,
+      "gwet_ac1_nominal": 0.6444186776819576,
+      "linear_weighted_kappa": 0.5544878794496615,
+      "matrix": {
+        "P0": {
+          "P0": 203,
+          "P1": 74,
+          "P2": 5,
+          "P3": 2
+        },
+        "P1": {
+          "P0": 11,
+          "P1": 122,
+          "P2": 35,
+          "P3": 6
+        },
+        "P2": {
+          "P0": 0,
+          "P1": 2,
+          "P2": 15,
+          "P3": 3
+        },
+        "P3": {
+          "P0": 0,
+          "P1": 0,
+          "P2": 0,
+          "P3": 2
+        }
+      },
+      "n": 480,
+      "observed_agreement": 0.7125,
+      "quadratic_weighted_kappa": 0.6175217317197887
+    }
+  },
+  "repository_cluster_bootstrap": {
+    "interval": "linear-interpolated percentile interval",
+    "lower": 0.030992,
+    "samples": 10000,
+    "seed": 20260720,
+    "upper": 0.086957
+  },
+  "retrieval_sensitivity": {
+    "insufficient_or_unclear": {
+      "count": 7,
+      "denominator": 100,
+      "proportion": 0.07,
+      "wilson_95_ci": {
+        "lower": 0.03431926106727268,
+        "upper": 0.137495147390735
+      }
+    },
+    "sufficient": {
+      "count": 19,
+      "denominator": 380,
+      "proportion": 0.05,
+      "wilson_95_ci": {
+        "lower": 0.03224017175577499,
+        "upper": 0.07676696611111122
+      }
+    }
+  },
+  "sampling_flow": {
+    "candidate_draw": 600,
+    "eligible_in_draw": 600,
+    "prior_id_exclusions": 69,
+    "sampling_frame": 2225,
+    "seed": 20260617,
+    "selected_random_ranks": 480,
+    "source_rows": 2294,
+    "structural_exclusions": 0,
+    "unused_eligible_reserve": 120
+  },
+  "schema_version": "repo480-reporting-diagnostics-v1",
+  "verified_membership": {
+    "membership_source_rows": 500,
+    "within_frame": {
+      "not_verified": {
+        "count": 26,
+        "denominator": 383,
+        "proportion": 0.06788511749347259,
+        "wilson_95_ci": {
+          "lower": 0.046744461745980743,
+          "upper": 0.09760784989850965
+        }
+      },
+      "verified": {
+        "count": 0,
+        "denominator": 97,
+        "proportion": 0.0,
+        "wilson_95_ci": {
+          "lower": 0.0,
+          "upper": 0.03809404252594769
+        }
+      }
+    }
+  }
+}

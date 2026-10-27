@@ -1,0 +1,33 @@
+{
+  "schema_version": "repo480-p1-typology-worklist-manifest-v1",
+  "codebook": {
+    "ref": "docs/repo480_p1_boundary_typology_codebook.md",
+    "sha256": "ca09032c5b7dee4915276b1bbab866e119d4627cfa2c3d1df13495532ea1f06b"
+  },
+  "inputs": {
+    "results/pilot/repo480_construct_validity_rows_v1.jsonl": "5cac9074c6dd4945403ff2a93751bea071691c8c61af0acc18366d9a7d8d24d9",
+    "data/annotations/worklists/repo480_construct_validity_tasks_v1.jsonl": "1580a59cb9c284a0c3959aaba575072d04dc49f1f9ce1f6cb7a293af33bbdbd2",
+    "results/pilot/repo480_boundary_validation_analysis_rows_v1.jsonl": "4163d2eaa3f2c158ed4961c5c3ea207266e6b5128614d8f0578c48cb198cf44b",
+    "data/annotations/adjudicated/repo480_available_v1.jsonl": "98b33aabbd10b34bd093c4590c2f6c42476f999dd0e60e64794dbb0544f4e63d",
+    "data/annotations/adjudication_decisions/repo480_available_v1.jsonl": "44b0742ead4eded1d4a0ca88c48211752f16fbd2c0ac43f616c78bb7b95a2472",
+    "data/annotations/oracle_gap/repo480_construct_validity_panel/repo480_construct_validity_adjudication.jsonl": "540877a22637e50c0110fbbdfa1c5cc043655bf3cfb4d32c54a467d8df4b0bca",
+    "data/annotations/raw_labels/repo480_available_v1_r1.jsonl": "5318d907093d44ee6eeeb7938c68373a8430bbb7a9e6e488a68a6685592e5a34",
+    "data/annotations/raw_labels/repo480_available_v1_r2.jsonl": "cfd7daaf1f1256d6827e60eba78837cf21ff8d51e52aacb2b1e82ec319aca390",
+    "data/annotations/oracle_gap/repo480_construct_validity_panel/repo480_construct_validity_r1.jsonl": "2357a31d3ed65865e30c4310050b162ef8d727d583d92cf9fcbdbbbd5ab8343f",
+    "data/annotations/oracle_gap/repo480_construct_validity_panel/repo480_construct_validity_r2.jsonl": "3726e373e73f8ced07ce3c86360a80aed839e7e3de050390fa79526bd582f6a1",
+    "data/annotations/oracle_gap/repo480_construct_validity_panel/repo480_construct_validity_r3.jsonl": "d1c2e5c48b8c8774f3b657314e6e9c0649e9327a19192929a998e1cc64a62b54",
+    "data/annotations/oracle_gap/repo480_boundary_validation_panel/repo480_boundary_validation_r1.jsonl": "869f36fa5bad08fa79e800197b80514f74f9876d4da8fa3e1635b4eab5d3246a",
+    "data/annotations/oracle_gap/repo480_boundary_validation_panel/repo480_boundary_validation_r2.jsonl": "9845d3e00e51c325bff2fdaa4ac4411d335a1539f39af2c543d49caf68c19871",
+    "data/annotations/oracle_gap/repo480_boundary_validation_panel/repo480_boundary_validation_adjudication.jsonl": "5f4e5f2a6942a26dd6aed098a45e7e5b2f51cfe04bdeb43364ed6ccf9bf4df5a",
+    "data/annotations/oracle_gap/repo480_boundary_validation_panel/repo480_boundary_validation_adjudicated_v1.jsonl": "7ca4ddf07bc3aa4c97396aa39f2c97c6b10ca298fbc351c23542949b364dede7"
+  },
+  "worklist": {
+    "ref": "data/annotations/worklists/repo480_p1_typology_worklist_v1.jsonl",
+    "sha256": "c34ee40281332780cd48fb0415a45e0c921c89d984bd3db132718ccdd32937e6"
+  },
+  "row_counts": {
+    "p1_non_strict": 23,
+    "boundary_discordant": 22
+  },
+  "coding_order": "boundary_discordant before any p1_non_strict oracle material"
+}
