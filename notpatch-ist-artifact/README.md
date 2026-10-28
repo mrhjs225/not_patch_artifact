@@ -1,11 +1,12 @@
 # NotPatch Replication Package
 
 This package accompanies the article *NotPatch: When "Resolved" Does Not Establish Patch Decidability in Repository-level Program Repair*.
-It contains the annotation records, manifests, and deterministic scripts behind every generated table in the article and its supplement.
+It contains the annotation records, manifests, and deterministic scripts behind every generated table in the article and in its audit guide.
+Start with `AUDIT.md`: it holds the row-level audits that the article cites as audit sections A1–A8.
 A single command regenerates these outputs and checks them byte for byte against the archived checksums.
 
 Public repository: https://github.com/mrhjs225/not_patch_artifact (this directory is `notpatch-ist-artifact/` there).
-Built from research-repository commit `ee09b13f3998` on 2026-10-27.
+Built from research-repository commit `87dd59f458cb` on 2026-10-27.
 
 ## Quick start
 
@@ -19,28 +20,29 @@ python3 reproduce.py                # unpack inputs, run all analysis steps, ver
 ```
 
 `reproduce.py` first restores the `.xz`-compressed inputs and the release assets to the paths the scripts expect.
-It then runs the steps below in order and compares all 54 outputs with `MANIFEST.json`.
+It then runs the steps below in order and compares all 57 outputs with `MANIFEST.json`.
 A step whose release asset is absent is skipped and reported; its shipped outputs are still checked.
 
 ## Paper-to-artifact map
 
-Table numbers refer to the submitted article and supplement.
+Table numbers refer to the submitted article, and A1–A8 to sections of `AUDIT.md`.
 
 | Step | Script | What it computes | Paper location |
 | --- | --- | --- | --- |
-| `boundary_validation` | `scripts/analyze_repo480_boundary_validation.py` | Independent boundary-validation panel estimate (RQ1) | Article Table 8 (validation rows) and Section 5.1 |
-| `prevalence` | `scripts/analyze_repo480_prevalence.py` | Frozen-rule prevalence, reviewer-aggregation and cluster sensitivities (RQ1) | Article Table 8; Supplement Tables 1 and 3 |
-| `transition` | `scripts/analyze_repo480_transition.py` | Issue-packet to repository-packet label transition (RQ1) | Section 5.1 text |
-| `reporting_diagnostics` | `scripts/analyze_repo480_reporting_diagnostics.py` | Sampling flow and raw-label reliability (RQ1) | Article Tables 4 and 9 |
-| `construct_validity` | `scripts/analyze_repo480_construct_validity.py --adjudication-return …/repo480_construct_validity_adjudication.jsonl` | Bidirectional construct-validity audit (RQ1) | Article Table 11; Supplement Table 4 |
-| `p1_typology` | `scripts/analyze_repo480_p1_typology.py` | Initial typology of non-strict P1 and boundary-discordant rows (RQ1 threats) | Section 7 (Threats to Validity) text |
-| `bv_prior_exposure` | `scripts/analyze_repo480_bv_prior_exposure.py` | Boundary-validation sensitivity to the panel's earlier construct-validity exposure (RQ1 threats) | Section 7 (Threats to Validity) text; Supplement Section 2 |
-| `rre_verification` | `scripts/analyze_repo480_rre_verification.py --analyzed-on 2026-10-19` | Independent expert verification of the typology (RQ1 threats) | Section 7 (Threats to Validity) text |
-| `rre_adjudication` | `scripts/analyze_repo480_rre_adjudication.py --analyzed-on 2026-10-19` | Final typology after adjudication (RQ1 threats) | Supplement Table 6 |
-| `rq2_masking` | `scripts/analyze_repo480_rq2_masking.py` | Oracle-masking panel on solved P2/P3 rows (RQ2) | Article Tables 13 and 14; Supplement Tables 9, 10, and 14 |
-| `rq2_control` | `scripts/analyze_repo480_rq2_control.py` | Matched negative-control panel (RQ2) | Article Table 15; Supplement Table 11 |
-| `expanded_retrieval` | `scripts/analyze_repo480_unbudgeted_retrieval.py --analyzed-on 2026-10-21` | Expanded-view retrieval sensitivity (RQ1) | Supplement Table 7 |
-| `external_frame` | `scripts/analyze_rrl_ext120_panel.py --analyzed-on 2026-10-26` | SWE-bench-Live external-frame check (RQ1) | Supplement Table 8 |
+| `boundary_validation` | `scripts/analyze_repo480_boundary_validation.py` | Independent boundary-validation panel estimate (RQ1) | Article Table 5 (validation rows) and Section 5.1.2; Audit A2 |
+| `prevalence` | `scripts/analyze_repo480_prevalence.py` | Frozen-rule prevalence, reviewer-aggregation and cluster sensitivities (RQ1) | Article Table 5; Audit A1 and A2 |
+| `transition` | `scripts/analyze_repo480_transition.py` | Issue-packet to repository-packet label transition (RQ1) | Section 5.1.2 text; Audit A2 |
+| `reporting_diagnostics` | `scripts/analyze_repo480_reporting_diagnostics.py` | Sampling flow and raw-label reliability (RQ1) | Article Tables 3 and 6; Audit A1 |
+| `construct_validity` | `scripts/analyze_repo480_construct_validity.py --adjudication-return …/repo480_construct_validity_adjudication.jsonl` | Bidirectional construct-validity audit (RQ1) | Article Table 7; Audit A3 |
+| `p1_typology` | `scripts/analyze_repo480_p1_typology.py` | Initial typology of non-strict P1 and boundary-discordant rows (RQ1 threats) | Audit A4 (initial analytic pass) |
+| `bv_prior_exposure` | `scripts/analyze_repo480_bv_prior_exposure.py` | Boundary-validation sensitivity to the panel's earlier construct-validity exposure (RQ1 threats) | Section 5.1.2 text; Audit A2 |
+| `rre_verification` | `scripts/analyze_repo480_rre_verification.py --analyzed-on 2026-10-19` | Independent expert verification of the typology (RQ1 threats) | Section 5.1.4 text; Audit A4 |
+| `rre_adjudication` | `scripts/analyze_repo480_rre_adjudication.py --analyzed-on 2026-10-19` | Final typology after adjudication (RQ1 threats) | Sections 5.1.2 and 5.1.4 text; Audit A4 |
+| `rq2_masking` | `scripts/analyze_repo480_rq2_masking.py` | Oracle-masking panel on solved P2/P3 rows (RQ2) | Article Tables 8 and 9; Audit A7 |
+| `rq2_control` | `scripts/analyze_repo480_rq2_control.py` | Matched negative-control panel (RQ2) | Article Table 10; Audit A7 |
+| `expanded_retrieval` | `scripts/analyze_repo480_unbudgeted_retrieval.py --analyzed-on 2026-10-21` | Expanded-view retrieval sensitivity (RQ1) | Sections 5.1.4 and 5.2 text; Audit A5 |
+| `external_frame` | `scripts/analyze_rrl_ext120_panel.py --analyzed-on 2026-10-26` | SWE-bench-Live external-frame check (RQ1) | Section 5.1.3 text; Audit A6 |
+| `audit` | `scripts/ist_artifact/render_audit.py` | Render the audit guide AUDIT.md from the regenerated tables | Audit A1–A8 |
 
 Most scripts refuse to run if a frozen input no longer matches its recorded SHA-256, and `reproduce.py` checks every shipped file before running any step.
 
@@ -59,6 +61,7 @@ Otherwise place each file at the listed path yourself, or run without it.
 
 | Path | Contents |
 | --- | --- |
+| `AUDIT.md` | Audit guide rendered from `scripts/ist_artifact/AUDIT_TEMPLATE.md` and the tables in `paper/generated/` |
 | `data/processed/dataset_splits/` | The 480-task random SWE-bench frame, its nested 120-task prefix, and the 120-task SWE-bench-Live frame |
 | `data/annotations/raw_labels/`, `adjudicated/`, `adjudication_decisions/` | Two independent available-only passes over the 480 repository packets, the adjudication decisions, and the adjudicated labels |
 | `data/annotations/oracle_gap/` | Independent boundary-validation panel, construct-validity audit, RQ2 masking panel, and matched negative-control panel returns |
@@ -68,7 +71,8 @@ Otherwise place each file at the listed path yourself, or run without it.
 | `data/processed/oracle_masking/` | Join of the 26 repository-packet P2/P3 rows with frozen public SWE-bench run outcomes |
 | `external/notpatch_evidence/` | Frozen evidence files read by the scripts; the external-frame reviewer views ship as `.xz` |
 | `results/pilot/` | Analysis outputs (`.json`, `.md`, row-level `.jsonl`) |
-| `paper/generated/` | LaTeX tables included verbatim in the article and supplement |
+| `paper/generated/` | LaTeX tables included verbatim in the article or rendered into `AUDIT.md` |
+| `paper/figures/` | Archived risk–coverage figure shown in audit A8 |
 | `scripts/`, `src/notpatch/` | Analysis scripts and the small shared library they import |
 | `docs/` | Annotation guideline, evidence protocol, schema errata, and panel protocols |
 
@@ -89,12 +93,12 @@ No identity mapping is included.
 ## Not included
 
 - The raw evidence corpus (about 4.1 GB of repository snapshots and inventories). The reviewer views in the release asset are the exact text shown to annotators, and `external/notpatch_evidence/swebench-repo480-v1/clean/checksums.sha256` with `data/manifests/generated/swebench_repo480_materialization_manifest_v1.json` identify the corpus they came from.
-- Inputs of the pre-revision issue-packet diagnostics: the detector and utility results reported in the supplement and the second-source panel listed in the article's provenance table. Their summaries are in `results/pilot/swebench_full_prevalence_detector_eval.md`, `leakage_resistant_detector_audit.md`, `swebench_full_prevalence_real_agent_utility_replay.md`, and `swebench_extra_prevalence_random_available_only_prevalence_summary.md`; they are not regenerated here.
+- Inputs of the pre-revision issue-packet diagnostics: the detector and utility results summarized in the article's Section 5.3 and audit A8, and the second-source panel listed in the article's provenance table. Their summaries are in `results/pilot/swebench_full_prevalence_detector_eval.md`, `leakage_resistant_detector_audit.md`, `swebench_full_prevalence_real_agent_utility_replay.md`, and `swebench_extra_prevalence_random_available_only_prevalence_summary.md`; they are not regenerated here.
 - Annotation request packages, coordinator records, and agent execution traces.
 
 ## Notes
 
 - Files are copied verbatim from the research repository, so some documents link to files that are not part of this package.
 - Some script and file names keep older identifiers (for example `rq1_` or `rq5_`). They are provenance only and do not follow the article's RQ numbering.
-- Expert rationales, several protocol documents, and the Markdown reports are partly written in Korean. Field names, labels, codes, and the LaTeX tables are in English.
+- `AUDIT.md` is written in English. Expert rationales, several protocol documents, and the Markdown reports are partly written in Korean. Field names, labels, codes, and the LaTeX tables are in English.
 - Issue and repository text comes from public GitHub projects distributed through SWE-bench and SWE-bench-Live and remains under each project's license.

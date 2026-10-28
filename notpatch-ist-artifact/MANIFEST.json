@@ -1,6 +1,6 @@
 {
  "schema_version": "notpatch-ist-artifact-manifest-v1",
- "source_commit": "ee09b13f3998",
+ "source_commit": "87dd59f458cb",
  "build_date": "2026-10-27",
  "commands": [
   {
@@ -9,7 +9,7 @@
     "scripts/analyze_repo480_boundary_validation.py"
    ],
    "description": "Independent boundary-validation panel estimate (RQ1)",
-   "paper": "Article Table 8 (validation rows) and Section 5.1",
+   "paper": "Article Table 5 (validation rows) and Section 5.1.2; Audit A2",
    "requires_assets": []
   },
   {
@@ -18,7 +18,7 @@
     "scripts/analyze_repo480_prevalence.py"
    ],
    "description": "Frozen-rule prevalence, reviewer-aggregation and cluster sensitivities (RQ1)",
-   "paper": "Article Table 8; Supplement Tables 1 and 3",
+   "paper": "Article Table 5; Audit A1 and A2",
    "requires_assets": []
   },
   {
@@ -27,7 +27,7 @@
     "scripts/analyze_repo480_transition.py"
    ],
    "description": "Issue-packet to repository-packet label transition (RQ1)",
-   "paper": "Section 5.1 text",
+   "paper": "Section 5.1.2 text; Audit A2",
    "requires_assets": []
   },
   {
@@ -36,7 +36,7 @@
     "scripts/analyze_repo480_reporting_diagnostics.py"
    ],
    "description": "Sampling flow and raw-label reliability (RQ1)",
-   "paper": "Article Tables 4 and 9",
+   "paper": "Article Tables 3 and 6; Audit A1",
    "requires_assets": []
   },
   {
@@ -47,7 +47,7 @@
     "data/annotations/oracle_gap/repo480_construct_validity_panel/repo480_construct_validity_adjudication.jsonl"
    ],
    "description": "Bidirectional construct-validity audit (RQ1)",
-   "paper": "Article Table 11; Supplement Table 4",
+   "paper": "Article Table 7; Audit A3",
    "requires_assets": []
   },
   {
@@ -56,7 +56,7 @@
     "scripts/analyze_repo480_p1_typology.py"
    ],
    "description": "Initial typology of non-strict P1 and boundary-discordant rows (RQ1 threats)",
-   "paper": "Section 7 (Threats to Validity) text",
+   "paper": "Audit A4 (initial analytic pass)",
    "requires_assets": []
   },
   {
@@ -65,7 +65,7 @@
     "scripts/analyze_repo480_bv_prior_exposure.py"
    ],
    "description": "Boundary-validation sensitivity to the panel's earlier construct-validity exposure (RQ1 threats)",
-   "paper": "Section 7 (Threats to Validity) text; Supplement Section 2",
+   "paper": "Section 5.1.2 text; Audit A2",
    "requires_assets": []
   },
   {
@@ -76,7 +76,7 @@
     "2026-10-19"
    ],
    "description": "Independent expert verification of the typology (RQ1 threats)",
-   "paper": "Section 7 (Threats to Validity) text",
+   "paper": "Section 5.1.4 text; Audit A4",
    "requires_assets": []
   },
   {
@@ -87,7 +87,7 @@
     "2026-10-19"
    ],
    "description": "Final typology after adjudication (RQ1 threats)",
-   "paper": "Supplement Table 6",
+   "paper": "Sections 5.1.2 and 5.1.4 text; Audit A4",
    "requires_assets": []
   },
   {
@@ -96,7 +96,7 @@
     "scripts/analyze_repo480_rq2_masking.py"
    ],
    "description": "Oracle-masking panel on solved P2/P3 rows (RQ2)",
-   "paper": "Article Tables 13 and 14; Supplement Tables 9, 10, and 14",
+   "paper": "Article Tables 8 and 9; Audit A7",
    "requires_assets": []
   },
   {
@@ -105,7 +105,7 @@
     "scripts/analyze_repo480_rq2_control.py"
    ],
    "description": "Matched negative-control panel (RQ2)",
-   "paper": "Article Table 15; Supplement Table 11",
+   "paper": "Article Table 10; Audit A7",
    "requires_assets": []
   },
   {
@@ -116,7 +116,7 @@
     "2026-10-21"
    ],
    "description": "Expanded-view retrieval sensitivity (RQ1)",
-   "paper": "Supplement Table 7",
+   "paper": "Sections 5.1.4 and 5.2 text; Audit A5",
    "requires_assets": [
     "external/notpatch_evidence/swebench-repo480-expanded-v1/repo480_unbudgeted_sources_v1.zip"
    ]
@@ -129,7 +129,16 @@
     "2026-10-26"
    ],
    "description": "SWE-bench-Live external-frame check (RQ1)",
-   "paper": "Supplement Table 8",
+   "paper": "Section 5.1.3 text; Audit A6",
+   "requires_assets": []
+  },
+  {
+   "name": "audit",
+   "argv": [
+    "scripts/ist_artifact/render_audit.py"
+   ],
+   "description": "Render the audit guide AUDIT.md from the regenerated tables",
+   "paper": "Audit A1–A8",
    "requires_assets": []
   }
  ],
@@ -166,12 +175,15 @@
   }
  ],
  "outputs": {
+  "AUDIT.md": "49f1bcc991cf0428864b64cab0469e211edc9aa82dd813a078d74f307766e2d4",
   "data/annotations/oracle_gap/repo480_boundary_validation_panel/repo480_boundary_validation_adjudicated_v1.jsonl": "7ca4ddf07bc3aa4c97396aa39f2c97c6b10ca298fbc351c23542949b364dede7",
   "data/manifests/generated/repo480_construct_validity_adjudication_manifest_v1.json": "26a28c7383f2ec7cb898ccfb990eaf39a6c6f77b0b8d9884d173909ba307214f",
   "data/manifests/generated/repo480_rq2_adjudication_manifest_v1.json": "ca467e4aa26a127727b0ba29d041a08f049814234dd1b881f6958ac5cbfa2153",
-  "paper/generated/repo480_construct_validity_summary.tex": "bdf1cbd4e72bd09ad1da80980e86f5293ab260905847d7e8b840ec79076b05fb",
+  "paper/generated/repo480_construct_validity_strata.tex": "da86a1cf68cef03e72076445cfe943ed76c647d894e11b5d2a3de9269e983e71",
+  "paper/generated/repo480_construct_validity_summary.tex": "50b64a155f7b208057bbc5a9cc5efcc6376945c28e7971e93fe181a46fc04117",
   "paper/generated/repo480_p1_typology_summary.tex": "15854ecaa25b6a0d5571fcdd4768e9a89819e4c3ea5861f30eb8220bee7b447a",
-  "paper/generated/repo480_reporting_diagnostics.tex": "0f10a5b1027c48b3a40ba44e0549fdad500c0dfece49ec4b1407ed2c614c931e",
+  "paper/generated/repo480_raw_reliability.tex": "8fdee39fae6639261b2226c6d2114a40021a736e77864e9acc313abb6513ff87",
+  "paper/generated/repo480_reporting_diagnostics.tex": "4ecc43e71dc814265cc0e37c16eb220b7d0ad572d4074e2070e42dabdb57975e",
   "paper/generated/repo480_rq1_nested120_audit.tex": "465653750fbf1b9152e7a799caf0775494f72da37f687ec48877476b89b7baec",
   "paper/generated/repo480_rq1_prevalence_summary.tex": "d4db41b11a0662b29fd93198200bed8d35608a7f32048a203f4de8a256496d1e",
   "paper/generated/repo480_rq2_control_summary.tex": "af17c0f9ed83a0dd193666d446eb5aeca54759660df039e82d5e5c16f1c755d4",
@@ -298,9 +310,12 @@
   "docs/rrl_external_frame_protocol.md": "c468e21e312d55aaccd41d676965b5c7c718d419700fae9a5797ad584c0e2843",
   "docs/task_schema.md": "09a533585b20ad5770be61693415e39664b60fef0b9efa9cbbaa691f59972a7f",
   "external/notpatch_evidence/swebench-repo480-v1/clean/checksums.sha256": "73488f9fdb187edebd27e7629d616590e67f14253c3252f0a5d32406b8feba3f",
-  "paper/generated/repo480_construct_validity_summary.tex": "bdf1cbd4e72bd09ad1da80980e86f5293ab260905847d7e8b840ec79076b05fb",
+  "paper/figures/risk_coverage.png": "c2e2911cf9ae9310e3835e4d0c04639abaa36f04423cb71ebef9f8e6fa6c34e1",
+  "paper/generated/repo480_construct_validity_strata.tex": "da86a1cf68cef03e72076445cfe943ed76c647d894e11b5d2a3de9269e983e71",
+  "paper/generated/repo480_construct_validity_summary.tex": "50b64a155f7b208057bbc5a9cc5efcc6376945c28e7971e93fe181a46fc04117",
   "paper/generated/repo480_p1_typology_summary.tex": "15854ecaa25b6a0d5571fcdd4768e9a89819e4c3ea5861f30eb8220bee7b447a",
-  "paper/generated/repo480_reporting_diagnostics.tex": "0f10a5b1027c48b3a40ba44e0549fdad500c0dfece49ec4b1407ed2c614c931e",
+  "paper/generated/repo480_raw_reliability.tex": "8fdee39fae6639261b2226c6d2114a40021a736e77864e9acc313abb6513ff87",
+  "paper/generated/repo480_reporting_diagnostics.tex": "4ecc43e71dc814265cc0e37c16eb220b7d0ad572d4074e2070e42dabdb57975e",
   "paper/generated/repo480_rq1_nested120_audit.tex": "465653750fbf1b9152e7a799caf0775494f72da37f687ec48877476b89b7baec",
   "paper/generated/repo480_rq1_prevalence_summary.tex": "d4db41b11a0662b29fd93198200bed8d35608a7f32048a203f4de8a256496d1e",
   "paper/generated/repo480_rq2_control_summary.tex": "af17c0f9ed83a0dd193666d446eb5aeca54759660df039e82d5e5c16f1c755d4",
@@ -362,10 +377,10 @@
   "scripts/accept_rrl_ext120_returns.py": "6f1ca47f6f3f12e3b0ecac49708d108813cd8e156aed3bae36ca4b3018d53629",
   "scripts/analyze_repo480_boundary_validation.py": "a2bf58d37dde6fcd15ff206b60e8e762457ec17ee5d4665aef6800505dafefbb",
   "scripts/analyze_repo480_bv_prior_exposure.py": "9d05315e1df1a98352666e7a6181a044fde125aca4eef542457a0d9edfbf5701",
-  "scripts/analyze_repo480_construct_validity.py": "b3003e489e5b53407ddd11c2383a2071dcdca90fe7e03afeef5ff299b78bb3bf",
+  "scripts/analyze_repo480_construct_validity.py": "6dc75ef23a1b16e59a0e3cb49597d48ab09d6dc4e20b5b8eaef0623dd8ce3693",
   "scripts/analyze_repo480_p1_typology.py": "04638d7e76e773e8cba91da7bf762ed6d89f47b0485c90816e153086055e1b68",
   "scripts/analyze_repo480_prevalence.py": "c7c93f6567e6793759780de14ea769789892e78ca1c28d83e40d85536191b2a3",
-  "scripts/analyze_repo480_reporting_diagnostics.py": "7d6988fcf6a6a5600236ac27fe6b0ad26016bb994452f2403918e88ef6934056",
+  "scripts/analyze_repo480_reporting_diagnostics.py": "b27f5a48f37f265468de71b7e5f36a95c91f5017009e00f28a26a0138f2743aa",
   "scripts/analyze_repo480_rq2_control.py": "95f45dbcba7a65fcc374a052de3d160d3c68d48d19ae3ab12c87de28bd5917b7",
   "scripts/analyze_repo480_rq2_masking.py": "761a1d51adee10a4ff2bf76aa0773df290c7c8bd6c2eb5e5bd1e9e029e890f45",
   "scripts/analyze_repo480_rre_adjudication.py": "58c3ea5eb85f5b8fc83dbc2d1a107973c67bcb204c97cd75ec1defe9f4bad497",
@@ -373,6 +388,8 @@
   "scripts/analyze_repo480_transition.py": "850165f7fe63470bd6f3571dd16a7aafd2c7a6d1d4ac2098f6c1fb954b525cf8",
   "scripts/analyze_repo480_unbudgeted_retrieval.py": "d5deaf40a21033e36a62ab46fe7315ce5c64ff06872478e29307734f58333cb4",
   "scripts/analyze_rrl_ext120_panel.py": "f82ed090d7b6fce1003a56cd75438bdfe040ba892bb85d436e5aa94a310cd1b3",
+  "scripts/ist_artifact/AUDIT_TEMPLATE.md": "286f9144c7ac39b46326fcb07cc631d5113579ce84fefece1917a9be25661e90",
+  "scripts/ist_artifact/render_audit.py": "3fe10aa250ba395e30141cfe2e0404157aa402df1689248cef60c20db701c84e",
   "scripts/prepare_repo480_rre_adjudication.py": "901bb392d9b0f629184f4d848709b9b680ff5d2bf98320a1d2e1f11d0beb0625",
   "scripts/selfcheck_repo480_bv_adjudication_return.py": "a4d5d577bec4932b2669a8150a4712e06328a99b90bb64e34384b84d75251f68",
   "scripts/selfcheck_repo480_construct_validity_adjudication_return.py": "fe3933706c57f3201b567516db7cea786bb2d3d98a63f3d0a91ef988d2bb0eea",
@@ -391,6 +408,7 @@
   "src/notpatch/evidence/contracts.py": "efb80c8559db63a89c10567a583b71c862f395aca261b17be228d08a022bb0f6",
   "src/notpatch/schemas/__init__.py": "e62080f278fed8bcfc0e63f1e214695d850922d7765a9871625dfcfe7a4104f5",
   "src/notpatch/schemas/validation.py": "58c70d73554cd561e8de23ae1048bcfb2b931905508b79b3fc20d473af26eb54",
+  "AUDIT.md": "49f1bcc991cf0428864b64cab0469e211edc9aa82dd813a078d74f307766e2d4",
   "data/annotations/worklists/repo480_construct_validity_tasks_v1.jsonl.xz": "083c35647cd0a8bb07724a59f675ba30a1703522d6ec0a0866d0574804cc725d",
   "data/annotations/worklists/repo480_rq2_phase1_tasks_v1.jsonl.xz": "34385f392202ce9c6a9aa71187870cf10a7e39ec1a180d28185836f1429900a6",
   "external/notpatch_evidence/swebench-live-lite-ext120-v1/clean/reviewer_views.jsonl.xz": "7e5d32d4315ad6acba4757be13b428c0e5c6562790b75dcab21d15796414c6db"
